@@ -68,5 +68,6 @@
             "payloadId": 0,
             "viewed": false
         }
-    ]
+    ],
+    "sessions": []
 }
