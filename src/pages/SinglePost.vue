@@ -1,6 +1,7 @@
 <template>
-  <div class="post-list">
+  <div class="single-post">
     <h1>Single Post</h1>
+    <div>{{ post.content }}</div>
   </div>
 </template>
 
@@ -14,9 +15,9 @@ export default {
   },
   async created() {
     try {
-      const res = await this.axios.get(`http://localhost:3000/posts`);
+      const res = await this.axios.get(`http://localhost:3000/posts/${this.$route.params.id}`);
 
-      this.posts = res.data;
+      this.post = res.data;
     } catch(e) {
       console.error(e);
     }
