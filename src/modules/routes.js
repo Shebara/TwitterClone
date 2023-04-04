@@ -1,10 +1,16 @@
 import PostList from '../pages/PostList.vue';
+import Error404 from '../pages/404.vue';
 
 const routes = [
     {
-    name: 'PostList',
-    path: '/',
-    component: PostList
+        name: 'Homepage',
+        path: '/',
+        component: PostList
+    },
+    {
+        name: '404',
+        path: '*',
+        component: Error404
     }
 ];
 
