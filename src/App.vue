@@ -23,4 +23,17 @@ export default {
   text-align: center;
   margin-bottom: 40px;
 }
+#app form input {
+  border: 1px solid #777777;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+#app form button {
+  border: 1px solid #333333;
+  background-color: #DFDFDF;
+  padding: 10px;
+}
+#app form button:hover {
+  background-color: #EFEFEF;
+}
 </style>

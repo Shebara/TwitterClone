@@ -5,18 +5,19 @@ import router from './router.js'
 Vue.use(Vuex)
 
 const state = {
-    isUser: false,
+    isLogin: false,
     token: false,
     user: false,
 }
 
 const actions = {
-    login({commit}, {user}) {
+    login({commit}, user) {
         commit('loginRequest')
 
         if (user.token) {
             commit('loginSuccess', user)
             console.log('Logged in!')
+            localStorage.setItem('user', user)
             router.push('/')
         } else {
             commit('loginFailure')
