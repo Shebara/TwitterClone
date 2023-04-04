@@ -5,21 +5,13 @@ import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
 
 import App from './App.vue'
-import PostList from './pages/PostList.vue';
+import routes from './modules/routes.js'
 
 import './assets/css/tailwind.css'
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);
-
-const routes = [
-  {
-  name: 'PostList',
-  path: '/',
-  component: PostList
-  }
-];
 
 const router = new VueRouter({ mode: 'history', routes: routes });
 
