@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'SinglePost',
+  name: 'SingleUser',
   data() {
     return {
       user: {}
