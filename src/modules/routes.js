@@ -1,4 +1,4 @@
-import PostList from './pages/PostList.vue';
+import PostList from '../pages/PostList.vue';
 
 const routes = [
     {
