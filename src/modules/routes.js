@@ -1,5 +1,6 @@
 import PostList from '../pages/PostList.vue';
 import Post from '../pages/SinglePost.vue';
+import User from '../pages/SingleUser.vue';
 import Error404 from '../pages/404.vue';
 
 const routes = [
@@ -12,6 +13,11 @@ const routes = [
         name: 'Single Post',
         path: '/post/:id',
         component: Post
+    },
+    {
+        name: 'Single User',
+        path: '/user/:id',
+        component: User
     },
     {
         name: '404',
