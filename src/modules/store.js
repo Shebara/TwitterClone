@@ -25,9 +25,10 @@ const actions = {
     confirmLogin({commit}, user) {
         commit('loginRequest')
 
-        if (user.token) {
+        if (user && user.token) {
             commit('loginSuccess', user)
         } else {
+            localStorage.removeItem('user')
             commit('loginFailure')
         }
     },
@@ -39,27 +40,42 @@ const actions = {
 
 const mutations = {
     resetState(state) {
-        state.isLogin = false;
-        state.token = false;
-        state.user = false;
+        state.isLogin = false
+        state.token = false
+        state.user = false
     },
     loginRequest(state) {
-        state.isLogin = true;
-        state.token = false;
-        state.user = false;
+        state.isLogin = true
+        state.token = false
+        state.user = false
     },
     loginSuccess(state, result) {
-        state.isLogin = true;
-        state.token = result.token;
-        state.user = result.user;
+        state.isLogin = true
+        state.token = result.token
+        state.user = result.user
     },
     loginFailure(state) {
-        state.isLogin = false;
+        state.isLogin = false
+        state.token = false
+        state.user = false
     },
+}
+
+const getters = {
+    getUserId() {
+        const user = state.user;
+
+        if (! user) {
+            return false;
+        }
+
+        return user.id;
+    }
 }
 
 export default new Vuex.Store({
     state,
     actions,
-    mutations
+    mutations,
+    getters
 })
