@@ -14,10 +14,17 @@ export default {
     Header
   },
   async created() {
-    const storage = localStorage.getItem('user');
+    try {
+      this.$watch(
+        () => this.$route.params,
+        () => {
+          this.$store.dispatch('confirmLogin')
+        }
+      )
 
-    if (storage){
-      this.$store.dispatch('confirmLogin', JSON.parse(storage))
+      this.$store.dispatch('confirmLogin')
+    } catch (e) {
+      console.error(e);
     }
   }
 }

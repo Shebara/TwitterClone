@@ -19,17 +19,19 @@ const actions = {
             localStorage.setItem('user', JSON.stringify(user))
             router.push('/')
         } else {
-            commit('loginFailure')
+            commit('logout')
         }
     },
-    confirmLogin({commit}, user) {
+    confirmLogin({commit}) {
         commit('loginRequest')
+
+        const storage = localStorage.getItem('user')
+        const user = JSON.parse(storage)
 
         if (user && user.token) {
             commit('loginSuccess', user)
         } else {
-            localStorage.removeItem('user')
-            commit('loginFailure')
+            commit('logout')
         }
     },
     logout({commit}) {
@@ -54,7 +56,9 @@ const mutations = {
         state.token = result.token
         state.user = result.user
     },
-    loginFailure(state) {
+    logout(state) {
+        localStorage.removeItem('user')
+
         state.isLogin = false
         state.token = false
         state.user = false
