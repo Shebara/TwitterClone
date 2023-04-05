@@ -85,4 +85,7 @@ export default {
 #app form button:hover {
   background-color: #EFEFEF;
 }
+#app a {
+  text-decoration: underline;
+}
 </style>
