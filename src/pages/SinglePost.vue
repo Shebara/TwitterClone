@@ -22,7 +22,7 @@
         <textarea v-model="comment" placeholder="Write the Comment Here"></textarea>
         <button class="mb-2" type="submit">Post</button>
       </form>
-      <div :class="error ? 'block' : 'hidden'" class="text-red-900 text-center">{{ error }}</div>
+      <div :class="error ? 'block' : 'hidden'" class="text-red-900">{{ error }}</div>
     </div>
   </div>
 </template>
@@ -100,12 +100,14 @@ export default {
 
         this.error = false
 
-        await this.axios.post(`http://localhost:3000/posts`, {
+        await this.axios.post(`http://localhost:3000/comments`, {
           content: content,
           authorId: this.myId,
           postId: this.id,
           datePublished: date
         });
+
+        this.$forceUpdate();
       } catch(e) {
         console.error(e);
       }
