@@ -74,6 +74,24 @@ const getters = {
         }
 
         return user.id;
+    },
+    getUserName() {
+        const user = state.user;
+
+        if (! user) {
+            return false;
+        }
+
+        return user.name;
+    },
+    getUserDisplayName() {
+        const user = state.user;
+
+        if (! user) {
+            return false;
+        }
+
+        return user.displayName;
     }
 }
 
