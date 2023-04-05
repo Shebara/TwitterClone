@@ -28,7 +28,7 @@
             }
         },
         async created() {
-            if (this.noUserData) {
+            if (this.noUserData || this.authorId === false) {
                 return;
             }
             try {
