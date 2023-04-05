@@ -67,7 +67,16 @@ export default {
   },
   methods: {
     async deletePost() {
-      //
+      try {
+          if (this.myId == this.authorId) {
+            return;
+          }
+          await this.axios.delete(`http://localhost:3000/posts/${this.id}`);
+
+          this.$router.push('/');
+      } catch (e) {
+          console.error(e);
+      }
     }
   }
 }
