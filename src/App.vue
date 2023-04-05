@@ -72,7 +72,7 @@ export default {
   font-size: 1.2rem;
   font-weight: 600;
 }
-#app form input {
+#app form input, #app form textarea {
   border: 1px solid #777777;
   margin-bottom: 10px;
   padding: 10px;

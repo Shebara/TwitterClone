@@ -6,6 +6,7 @@ import Post from '../pages/SinglePost.vue';
 import User from '../pages/UserProfile.vue';
 import LogIn from '../pages/LogIn.vue';
 import Register from '../pages/Register.vue';
+import EditPost from '../pages/EditPost.vue';
 import Error404 from '../pages/404.vue';
 
 const routes = [
@@ -43,6 +44,16 @@ const routes = [
         name: 'Register',
         path: '/register',
         component: Register
+    },
+    {
+        name: 'New Post',
+        path: '/edit',
+        component: EditPost
+    },
+    {
+        name: 'Edit Post',
+        path: '/edit/:id',
+        component: EditPost
     },
     {
         name: 'Log Out',

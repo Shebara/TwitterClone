@@ -1,5 +1,5 @@
 <template>
-    <router-link class="post-button" v-show="display" :to="`/post`">
+    <router-link class="post-button" v-show="display" :to="`/edit`">
         New Post
     </router-link>
 </template>
