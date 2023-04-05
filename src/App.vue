@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :key="key" />
     <router-view class="p-5 container mx-auto" />
   </div>
 </template>
@@ -13,12 +13,24 @@ export default {
   components: {
     Header
   },
+  data () {
+    return {
+      key: 0
+    }
+  },
   async created() {
     try {
+      const vm = this
       this.$watch(
         () => this.$route.params,
         () => {
           this.$store.dispatch('confirmLogin')
+        }
+      )
+      this.$watch(
+        () => this.$store.getters.getUserId,
+        () => {
+          vm.key++
         }
       )
 
