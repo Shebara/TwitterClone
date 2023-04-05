@@ -3,7 +3,7 @@ import store from './store.js';
 import MyPosts from '../pages/MyPosts.vue';
 import AllPosts from '../pages/AllPosts.vue';
 import Post from '../pages/SinglePost.vue';
-import User from '../pages/SingleUser.vue';
+import User from '../pages/UserProfile.vue';
 import LogIn from '../pages/LogIn.vue';
 import Register from '../pages/Register.vue';
 import Error404 from '../pages/404.vue';
@@ -25,8 +25,13 @@ const routes = [
         component: Post
     },
     {
-        name: 'Single User',
-        path: '/user/:id',
+        name: 'My Profile',
+        path: '/profile',
+        component: User
+    },
+    {
+        name: 'User Profile',
+        path: '/profile/:id',
         component: User
     },
     {

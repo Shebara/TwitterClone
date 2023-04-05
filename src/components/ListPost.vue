@@ -3,7 +3,7 @@
         <router-link :to="`/post/${id}`" class="text-left hover:text-black-70 underline text-black">{{ content }}</router-link>
         <div class="mt-2 text-right text-cs">Posted on {{ datePublished | moment("calendar") }}
             <span v-if="! noUserData">by
-            <router-link :to="`/user/${authorId}`" class="text-left hover:text-black-70 underline text-black">
+            <router-link :to="`/profile/${authorId}`" class="text-left hover:text-black-70 underline text-black">
             {{ displayName }} <span class="italic">(@{{ name }})</span>
             </router-link></span>
         </div>
