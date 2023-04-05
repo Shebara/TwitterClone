@@ -3,11 +3,26 @@
     <h1>Single Post</h1>
     <div>{{ content }}</div>
     <div>Posted on {{ datePublished | moment("calendar") }}
-      <AuthorLine :authorId="authorId" />
+      <AuthorLine :key="key" :authorId="authorId" />
     </div>
-    <div v-show="mine">
-      <a class="cursor-pointer" @click.prevent="deletePost">Delete</a>
-      <router-link :to="`/edit/${id}`">Edit</router-link>
+    <div v-show="myId === authorId">
+      <a class="cursor-pointer mr-2" @click.prevent="deletePost">Delete</a>
+      <router-link class="mr-2" :to="`/edit/${id}`">Edit</router-link>
+    </div>
+    <div v-show="replies.length > 0" class="comments mt-4 mb-4 text-sm">
+      <div v-for="reply of replies" :key="reply.id">
+        {{ reply.content }}
+        <br>
+        Posted on {{ reply.datePosted | moment("calendar") }}
+        <AuthorLine :authorId="reply.authorId" />
+      </div>
+    </div>
+    <div class="comment mt-4 mb-4">
+      <form class="max-w-md flex flex-col" @submit.prevent="postComment">
+        <textarea v-model="comment" placeholder="Write the Comment Here"></textarea>
+        <button class="mb-2" type="submit">Post</button>
+      </form>
+      <div :class="error ? 'block' : 'hidden'" class="text-red-900 text-center">{{ error }}</div>
     </div>
   </div>
 </template>
@@ -26,11 +41,22 @@ export default {
       authorId: false,
       content: false,
       datePublished: false,
-      mine: false
+      myId: false,
+      comment: '',
+      error: false,
+      replies: [],
+      key: 0
     }
   },
   async created() {
     try {
+      const vm = this;
+      this.$watch(
+        () => this.authorId,
+        () => {
+          vm.key++
+        }
+      )
       this.id = this.$route.params.id;
 
       if ( this.id === false ) {
@@ -46,7 +72,11 @@ export default {
       this.content = data.content;
       this.authorId = data.authorId;
       this.datePublished = data.datePublished;
-      this.mine = this.authorId === this.$store.getters.getUserId;
+      this.mine = this.authorId;
+      this.myId = this.$store.getters.getUserId;
+
+      const comment_res = await this.axios.get(`http://localhost:3000/comments?postId=${this.id}`);
+      this.replies = comment_res.data;
     } catch(e) {
       console.error(e);
 
@@ -56,6 +86,29 @@ export default {
   methods: {
     async deletePost() {
       //
+    },
+    async postComment() {
+      try {
+        const date = this.$moment().toISOString()
+        const content = this.comment
+
+        if (! content || content.length < 1) {
+          this.error = 'The comment cannot be empty.'
+
+          return
+        }
+
+        this.error = false
+
+        await this.axios.post(`http://localhost:3000/posts`, {
+          content: content,
+          authorId: this.myId,
+          postId: this.id,
+          datePublished: date
+        });
+      } catch(e) {
+        console.error(e);
+      }
     }
   }
 }
