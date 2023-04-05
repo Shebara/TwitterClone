@@ -20,6 +20,7 @@ const actions = {
             router.push('/')
         } else {
             commit('logout')
+            router.push('/login')
         }
     },
     confirmLogin({commit}) {
@@ -35,8 +36,7 @@ const actions = {
         }
     },
     logout({commit}) {
-        commit('resetState')
-        router.push('/')
+        commit('logout')
     }
 }
 
@@ -62,8 +62,6 @@ const mutations = {
         state.isLogin = false
         state.token = false
         state.user = false
-
-        router.push('/login')
     },
 }
 

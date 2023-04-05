@@ -18,7 +18,7 @@ export default {
       key: 0
     }
   },
-  async created() {
+  created() {
     try {
       const vm = this
       this.$watch(
@@ -29,7 +29,10 @@ export default {
       )
       this.$watch(
         () => this.$store.getters.getUserId,
-        () => {
+        (userId) => {
+          if (userId === false) {
+            this.$router.push('/login')
+          }
           vm.key++
         }
       )
