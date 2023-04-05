@@ -2,7 +2,9 @@
     <div>
         <span v-if="! noUserData">by
             <router-link :to="`/profile/${authorId}`" class="text-left hover:text-black-70 underline text-black">
-            {{ displayName }} <span class="italic">(@{{ name }})</span>
+            {{ displayName }}
+            <span class="italic">(@{{ name }})</span>
+            <img v-show="avatar" class="small-avatar ml-auto" :src="avatar" />
             </router-link>
         </span>
     </div>
@@ -24,7 +26,8 @@
         data() {
             return {
                 displayName: false,
-                name: false
+                name: false,
+                avatar: false
             }
         },
         async created() {
@@ -36,6 +39,7 @@
 
                 this.displayName = res.data.displayName;
                 this.name = res.data.name;
+                this.avatar = res.data.avatar;
             } catch(e) {
                 console.error(e);
             }

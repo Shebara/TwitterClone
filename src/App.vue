@@ -46,6 +46,9 @@ export default {
 </script>
 
 <style>
+#app {
+  padding-bottom: 120px;
+}
 #app h1 {
   font-size: 2.2rem;
   font-weight: 700;
@@ -87,5 +90,12 @@ export default {
 }
 #app a {
   text-decoration: underline;
+}
+#app .small-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
 }
 </style>
