@@ -1,36 +1,20 @@
 <template>
-    <div class="p-4 border">
-        <router-link :to="`/post/${id}`" class="text-left hover:text-black-70 underline text-black">{{ content }}</router-link>
-        <div class="mt-2 text-right text-cs">Posted on {{ datePublished | moment("calendar") }}
-            <AuthorLine :authorId="authorId" :noUserData="noUserData" />
-        </div>
+    <div>
+        <span v-if="! noUserData">by
+            <router-link :to="`/profile/${authorId}`" class="text-left hover:text-black-70 underline text-black">
+            {{ displayName }} <span class="italic">(@{{ name }})</span>
+            </router-link>
+        </span>
     </div>
 </template>
 
 <script>
-    import AuthorLine from './AuthorLine.vue'
-
     export default {
-        name: 'ListPost',
-        components: {
-            AuthorLine
-        },
+        name: 'TimeAuthorLine',
         props: {
-            id: {
-                required: true,
-                type: Number
-            },
-            content: {
-                required: true,
-                type: String
-            },
             authorId: {
                 required: true,
                 type: Number
-            },
-            datePublished: {
-                required: true,
-                type: String
             },
             noUserData: {
                 required: false,
