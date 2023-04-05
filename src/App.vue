@@ -47,10 +47,30 @@ export default {
 
 <style>
 #app h1 {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 40px;
+}
+#app h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+#app h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+#app h4 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+#app h5 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+#app h6 {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 #app form input {
   border: 1px solid #777777;
