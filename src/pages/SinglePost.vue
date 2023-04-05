@@ -9,7 +9,7 @@
       <a class="cursor-pointer mr-2" @click.prevent="deletePost">Delete</a>
       <router-link class="mr-2" :to="`/edit/${id}`">Edit</router-link>
     </div>
-    <CommentSection :myId="myId" :postId="id" />
+    <CommentSection :myId="myId" :postId="id" :postOwnerId="authorId" />
   </div>
 </template>
 

@@ -6,7 +6,7 @@
         <br>
         Posted on {{ reply.datePosted | moment("calendar") }}
         <AuthorLine :authorId="reply.authorId" />
-        <a class="cursor-pointer" v-show="myId == reply.authorId" @click="deleteComment(reply.id)">Delete</a>
+        <a class="cursor-pointer" v-show="myId == reply.authorId || myId == postOwnerId" @click="deleteComment(reply.id)">Delete</a>
       </div>
     </div>
     <div class="comment mt-4 mb-4">
@@ -32,7 +32,10 @@ export default {
             required: true
         },
         myId: {
-            required: true,
+            required: true
+        },
+        postOwnerId: {
+            required: true
         }
     },
     data() {
@@ -56,8 +59,8 @@ export default {
 
             this.$router.link('/posts');
         }
-        },
-        methods: {
+    },
+    methods: {
         async deleteComment(id) {
             try {
                 await this.axios.delete(`http://localhost:3000/comments/${id}`);
