@@ -40,6 +40,10 @@ export default {
       ]
       this.authentication = [
         {
+          url: '/profile',
+          text: 'My Profile'
+        },
+        {
           url: '/logout',
           text: 'Log Out'
         }
