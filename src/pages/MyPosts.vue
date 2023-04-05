@@ -9,6 +9,7 @@
         :content="post.content"
         :authorId="post.authorId"
         :datePublished="post.datePublished"
+        :noUserData=true
         />
     </div>
   </div>
