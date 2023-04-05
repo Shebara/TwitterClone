@@ -30,12 +30,11 @@ export default {
   methods: {
     async submit() {
       try {
+        const date = this.$moment().toISOString()
         const username = this.username
         const displayName = this.displayName ? this.displayName : username
         const password = this.password
         const repeatPassword = this.repeatPassword
-
-        console.log(username.length)
 
         if (username.length < 6 || password.length < 6) {
           this.error = 'Username and password must have at least 6 characters.'
@@ -66,7 +65,8 @@ export default {
           name: username,
           password: password,
           displayName: displayName,
-          avatar: avatar
+          avatar: avatar,
+          registrationDate: date
         })
 
         this.$router.push('/login')

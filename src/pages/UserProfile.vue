@@ -3,6 +3,7 @@
     <h1>{{ displayName }}</h1>
     <img class="mx-auto max-w-sm" v-show="avatar" :src="avatar" :alt="name" />
     <h5>@{{ name }}</h5>
+    <p>Registered on: {{ registrationDate | moment("calendar") }}</p>
   </div>
 </template>
 
@@ -15,6 +16,7 @@ export default {
       displayName: 'Single User',
       name: false,
       avatar: null,
+      registrationDate: false,
     }
   },
   async created() {
@@ -26,6 +28,7 @@ export default {
       this.name = user.name;
       this.displayName = user.displayName;
       this.avatar = user.avatar;
+      this.registrationDate = user.registrationDate;
     } catch(e) {
       console.error(e);
     }

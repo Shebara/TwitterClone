@@ -1,73 +1,247 @@
 {
-    "users": [
-        {
-            "id": 0,
-            "name": "SuperAdmin",
-            "password": "123456",
-            "displayName": "Master of the Universe",
-            "avatar": null
-        },
-        {
-            "id": 1,
-            "name": "Visitor",
-            "password": "abcdef",
-            "displayName": "A humble servant...",
-            "avatar": null
-        }
-    ],
-    "posts": [
-        {
-            "id": 0,
-            "authorId": 0,
-            "content": "Hello, world!",
-            "status": "public",
-            "dateCreated": "2023-04-03T18:25:43.511Z",
-            "datePublished": "2023-04-03T18:25:43.511Z",
-            "dateModified": null
-        }
-    ],
-    "comments": [
-        {
-            "id": 0,
-            "authorId": 1,
-            "postId": 0,
-            "content": "first!!!!!111",
-            "status": "deleted",
-            "datePosted": "2023-04-03T18:27:32.321Z",
-            "dateModified": null
-        },
-        {
-            "id": 1,
-            "authorId": 1,
-            "postId": 0,
-            "content": "Hello yourself...",
-            "status": "public",
-            "datePosted": "2023-04-03T18:28:32.321Z",
-            "dateModified": null
-        }
-    ],
-    "follows": [
-        {
-            "id": 0,
-            "followerId": 1,
-            "followedId": 0
-        }
-    ],
-    "alerts": [
-        {
-            "id": 0,
-            "userId": 0,
-            "type": "follow",
-            "payloadId": 1,
-            "viewed": true
-        },
-        {
-            "id": 1,
-            "userId": 1,
-            "type": "deletedComment",
-            "payloadId": 0,
-            "viewed": false
-        }
-    ],
-    "sessions": []
+  "users": [
+    {
+      "id": 0,
+      "name": "SuperAdmin",
+      "password": "123456",
+      "displayName": "Master of the Universe",
+      "registrationDate": "2023-04-02T19:26:31.273Z",
+      "avatar": null
+    },
+    {
+      "id": 1,
+      "name": "Visitor",
+      "password": "abcdef",
+      "displayName": "A humble servant...",
+      "registrationDate": "2023-04-02T19:27:33.273Z",
+      "avatar": null
+    },
+    {
+      "name": "BabaYaga",
+      "password": "babayaga",
+      "displayName": "Baba Yaga",
+      "avatar": "https://www.worldhistory.org/img/r/p/500x600/14527.jpg",
+      "registrationDate": "2023-04-05T18:10:33.273Z",
+      "id": 2
+    },
+    {
+      "name": "StormTrooper",
+      "password": "empire",
+      "displayName": "LONG LIVE THE EMPEROR!!!!!111",
+      "avatar": "https://cdn.shopify.com/s/files/1/0097/7810/2350/products/IMG13733sm_300x.png",
+      "registrationDate": "2023-04-05T18:50:45.791Z",
+      "id": 3
+    }
+  ],
+  "posts": [
+    {
+      "id": 0,
+      "authorId": 0,
+      "content": "Hello, world!",
+      "status": "public",
+      "dateCreated": "2023-04-03T18:25:43.511Z",
+      "datePublished": "2023-04-03T18:25:43.511Z",
+      "dateModified": null
+    }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "authorId": 1,
+      "postId": 0,
+      "content": "first!!!!!111",
+      "status": "deleted",
+      "datePosted": "2023-04-03T18:27:32.321Z",
+      "dateModified": null
+    },
+    {
+      "id": 1,
+      "authorId": 1,
+      "postId": 0,
+      "content": "Hello yourself...",
+      "status": "public",
+      "datePosted": "2023-04-03T18:28:32.321Z",
+      "dateModified": null
+    }
+  ],
+  "follows": [
+    {
+      "id": 0,
+      "followerId": 1,
+      "followedId": 0
+    }
+  ],
+  "alerts": [
+    {
+      "id": 0,
+      "userId": 0,
+      "type": "follow",
+      "payloadId": 1,
+      "viewed": true
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "type": "deletedComment",
+      "payloadId": 0,
+      "viewed": false
+    }
+  ],
+  "sessions": [
+    {
+      "userId": 0,
+      "token": "0.gqveyfdi1h7",
+      "id": 1
+    },
+    {
+      "userId": 0,
+      "token": "0.dj7qsmzdchd",
+      "id": 2
+    },
+    {
+      "userId": 0,
+      "token": "0.vbaov4j0868",
+      "id": 3
+    },
+    {
+      "userId": 0,
+      "token": "0.nmt461dr76e",
+      "id": 4
+    },
+    {
+      "userId": 0,
+      "token": "0.inzu27603m",
+      "id": 5
+    },
+    {
+      "userId": 0,
+      "token": "0.8xb8jz9z7ri",
+      "id": 6
+    },
+    {
+      "userId": 0,
+      "token": "0.lk3v32q4cp",
+      "id": 7
+    },
+    {
+      "userId": 0,
+      "token": "0.zdzaaquuy6",
+      "id": 8
+    },
+    {
+      "userId": 0,
+      "token": "0.2yvv9llkauw",
+      "id": 9
+    },
+    {
+      "userId": 0,
+      "token": "0.1v2jznkc14t",
+      "id": 10
+    },
+    {
+      "userId": 0,
+      "token": "0.avkkx5mq0h",
+      "id": 11
+    },
+    {
+      "userId": 0,
+      "token": "0.3tiu4rspot",
+      "id": 12
+    },
+    {
+      "userId": 0,
+      "token": "0.zypw5gkembh",
+      "id": 13
+    },
+    {
+      "userId": 0,
+      "token": "0.oqm3iwifph",
+      "id": 14
+    },
+    {
+      "userId": 0,
+      "token": "0.zxqwo7tbzed",
+      "id": 15
+    },
+    {
+      "userId": 0,
+      "token": "0.59c8j1tkcja",
+      "id": 16
+    },
+    {
+      "userId": 0,
+      "token": "0.j62euhfdwu",
+      "id": 17
+    },
+    {
+      "userId": 0,
+      "token": "0.6pywunf01w",
+      "id": 18
+    },
+    {
+      "userId": 0,
+      "token": "0.hjrc0fxaekr",
+      "id": 19
+    },
+    {
+      "userId": 0,
+      "token": "0.i1ftcw63c4p",
+      "id": 20
+    },
+    {
+      "userId": 0,
+      "token": "0.utwrgqdkii",
+      "id": 21
+    },
+    {
+      "userId": 0,
+      "token": "0.8sjiflgx70y",
+      "id": 22
+    },
+    {
+      "userId": 0,
+      "token": "0.xic62c2vfch",
+      "id": 23
+    },
+    {
+      "userId": 0,
+      "token": "0.7v2cfgeun7w",
+      "id": 24
+    },
+    {
+      "userId": 0,
+      "token": "0.m68zn3t7fm",
+      "id": 25
+    },
+    {
+      "userId": 0,
+      "token": "0.vujawm4xhns",
+      "id": 26
+    },
+    {
+      "userId": 0,
+      "token": "0.2bilrmenwp9",
+      "id": 27
+    },
+    {
+      "userId": 0,
+      "token": "0.00nhk23lhs2d",
+      "id": 28
+    },
+    {
+      "userId": 0,
+      "token": "0.housgauoiz",
+      "id": 29
+    },
+    {
+      "userId": 2,
+      "token": "0.oihl584p5ro",
+      "id": 30
+    },
+    {
+      "userId": 3,
+      "token": "0.raphokd2lqe",
+      "id": 31
+    }
+  ]
 }
