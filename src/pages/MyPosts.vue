@@ -1,18 +1,27 @@
 <template>
   <div class="post-list">
-    <h1>Posts by You</h1>
+    <h1>Posts by You ({{$store.getters.getUserDisplayName}})</h1>
     <div class="posts flex flex-wrap justify-center">
-      <div class="p-4 border" v-for="post of posts" :key="post.id">
-        <router-link :to="`/post/${post.id}`" class="text-left hover:text-black-70 underline text-black">{{ post.content }}</router-link>
-        <div class="mt-2 text-right text-cs">Posted on {{ post.dateCreated | moment("calendar") }}</div>
-      </div>
+      <ListPost
+        v-for="post of posts"
+        :key="post.id"
+        :id="post.id"
+        :content="post.content"
+        :authorId="post.authorId"
+        :datePublished="post.datePublished"
+        />
     </div>
   </div>
 </template>
 
 <script>
+import ListPost from '../components/ListPost.vue'
+
 export default {
   name: 'MyPosts',
+  components: {
+    ListPost
+  },
   data() {
     return {
       posts: []
