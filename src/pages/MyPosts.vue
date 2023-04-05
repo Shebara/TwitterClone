@@ -22,7 +22,14 @@ export default {
   },
   async created() {
     try {
-      const res = await this.axios.get(`http://localhost:3000/posts`);//?authorId=this.$store.user.id
+      const userId = this.$store.getters.getUserId;
+
+      if ( userId === false ) {
+        this.$store.dispatch('confirmLogin', false);
+        return;
+      }
+
+      const res = await this.axios.get(`http://localhost:3000/posts?authorId=${userId}`);
 
       this.posts = res.data;
     } catch(e) {
