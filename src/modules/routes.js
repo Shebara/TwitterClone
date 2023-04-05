@@ -1,4 +1,5 @@
 import MyPosts from '../pages/MyPosts.vue';
+import AllPosts from '../pages/AllPosts.vue';
 import Post from '../pages/SinglePost.vue';
 import User from '../pages/SingleUser.vue';
 import LogIn from '../pages/LogIn.vue';
@@ -10,6 +11,11 @@ const routes = [
         name: 'Homepage',
         path: '/',
         component: MyPosts
+    },
+    {
+        name: 'All Posts',
+        path: '/posts',
+        component: AllPosts
     },
     {
         name: 'Single Post',
