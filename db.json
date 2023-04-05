@@ -61,6 +61,13 @@
       "postId": 0,
       "content": "Hello yourself...",
       "datePosted": "2023-04-03T18:28:32.321Z"
+    },
+    {
+      "content": "No firsting pls",
+      "authorId": 0,
+      "postId": "0",
+      "datePublished": "2023-04-05T22:00:47.794Z",
+      "id": 2
     }
   ],
   "follows": [
