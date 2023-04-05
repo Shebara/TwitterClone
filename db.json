@@ -38,10 +38,13 @@
       "id": 0,
       "authorId": 0,
       "content": "Hello, world!",
-      "status": "public",
-      "dateCreated": "2023-04-03T18:25:43.511Z",
-      "datePublished": "2023-04-03T18:25:43.511Z",
-      "dateModified": null
+      "datePublished": "2023-04-03T18:25:43.511Z"
+    },
+    {
+      "content": "Hello, world!111111",
+      "authorId": 0,
+      "datePublished": "2023-04-05T20:27:10.409Z",
+      "id": 1
     }
   ],
   "comments": [
@@ -50,18 +53,14 @@
       "authorId": 1,
       "postId": 0,
       "content": "first!!!!!111",
-      "status": "deleted",
-      "datePosted": "2023-04-03T18:27:32.321Z",
-      "dateModified": null
+      "datePosted": "2023-04-03T18:27:32.321Z"
     },
     {
       "id": 1,
       "authorId": 1,
       "postId": 0,
       "content": "Hello yourself...",
-      "status": "public",
-      "datePosted": "2023-04-03T18:28:32.321Z",
-      "dateModified": null
+      "datePosted": "2023-04-03T18:28:32.321Z"
     }
   ],
   "follows": [

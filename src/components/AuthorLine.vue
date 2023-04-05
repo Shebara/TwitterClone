@@ -13,8 +13,7 @@
         name: 'TimeAuthorLine',
         props: {
             authorId: {
-                required: true,
-                type: Number
+                required: true
             },
             noUserData: {
                 required: false,
