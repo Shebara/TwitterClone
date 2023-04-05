@@ -1,8 +1,8 @@
 <template>
   <div class="single-user text-center">
     <h1>{{ displayName }}</h1>
-    <img v-show="avatar" :src="avatar" :alt="name" />
-    <h5></h5>
+    <img class="mx-auto max-w-sm" v-show="avatar" :src="avatar" :alt="name" />
+    <h5>@{{ name }}</h5>
   </div>
 </template>
 
@@ -19,10 +19,13 @@ export default {
   },
   async created() {
     try {
-      this.id = this.$route.params.id;
-      const res = await this.axios.get(`http://localhost:3000/users/${this.$route.params.id}`);
+      this.id = this.$route.params.id ? this.$route.params.id : this.$store.getters.getUserId;
+      const res = await this.axios.get(`http://localhost:3000/users/${this.id}`);
 
-      this.user = res.data;
+      const user = res.data;
+      this.name = user.name;
+      this.displayName = user.displayName;
+      this.avatar = user.avatar;
     } catch(e) {
       console.error(e);
     }
