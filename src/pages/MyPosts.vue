@@ -1,6 +1,6 @@
 <template>
   <div class="post-list">
-    <h1>Post List</h1>
+    <h1>Posts by You</h1>
     <div class="posts flex flex-wrap justify-center">
       <div class="p-4 border" v-for="post of posts" :key="post.id">
         <router-link :to="`/post/${post.id}`" class="text-left hover:text-black-70 underline text-black">{{ post.content }}</router-link>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'PostList',
+  name: 'MyPosts',
   data() {
     return {
       posts: []
@@ -22,7 +22,7 @@ export default {
   },
   async created() {
     try {
-      const res = await this.axios.get(`http://localhost:3000/posts`);
+      const res = await this.axios.get(`http://localhost:3000/posts`);//?authorId=this.$store.user.id
 
       this.posts = res.data;
     } catch(e) {

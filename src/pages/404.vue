@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'PostList',
+  name: 'NotFound',
   data() {
     return {
       posts: []
