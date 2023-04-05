@@ -1,3 +1,5 @@
+import store from './store.js';
+
 import MyPosts from '../pages/MyPosts.vue';
 import AllPosts from '../pages/AllPosts.vue';
 import Post from '../pages/SinglePost.vue';
@@ -33,9 +35,18 @@ const routes = [
         component: LogIn
     },
     {
-        name: 'Log Out',
+        name: 'Register',
         path: '/register',
         component: Register
+    },
+    {
+        name: 'Log Out',
+        path: '/logout',
+        component: {
+            beforeRouteEnter() {
+                store.commit('logout');
+            }
+        }
     },
     {
         name: '404',

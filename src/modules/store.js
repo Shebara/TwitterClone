@@ -62,6 +62,8 @@ const mutations = {
         state.isLogin = false
         state.token = false
         state.user = false
+
+        router.push('/login')
     },
 }
 
