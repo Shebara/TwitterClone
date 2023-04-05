@@ -12,6 +12,13 @@ export default {
   name: 'App',
   components: {
     Header
+  },
+  async created() {
+    const storage = localStorage.getItem('user');
+
+    if (storage){
+      this.$store.dispatch('confirmLogin', JSON.parse(storage))
+    }
   }
 }
 </script>

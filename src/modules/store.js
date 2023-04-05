@@ -16,9 +16,17 @@ const actions = {
 
         if (user.token) {
             commit('loginSuccess', user)
-            console.log('Logged in!')
-            localStorage.setItem('user', user)
+            localStorage.setItem('user', JSON.stringify(user))
             router.push('/')
+        } else {
+            commit('loginFailure')
+        }
+    },
+    confirmLogin({commit}, user) {
+        commit('loginRequest')
+
+        if (user.token) {
+            commit('loginSuccess', user)
         } else {
             commit('loginFailure')
         }
