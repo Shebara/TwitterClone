@@ -7,6 +7,7 @@
       <button class="mb-2" type="submit">Log In</button>
     </form>
     <div :class="error ? 'block' : 'hidden'" class="text-red-900 text-center">{{ error }}</div>
+    <div class="mt-8 text-center">Got no account? <router-link :to="`/register`">Register</router-link></div>
   </div>
 </template>
 
