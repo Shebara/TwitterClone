@@ -14,10 +14,13 @@
           </ul>
         </div>
       </div>
+      <PostButton />
     </header>
 </template>
 
 <script>
+import PostButton from './PostButton.vue'
+
 export default {
   name: 'MainHeader',
   data() {
@@ -25,6 +28,9 @@ export default {
       links: [],
       authentication: []
     }
+  },
+  components: {
+    PostButton
   },
   created() {
     if ( this.$store.getters.getUserId !== false ) {
