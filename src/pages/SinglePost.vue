@@ -100,12 +100,15 @@ export default {
 
         this.error = false
 
-        await this.axios.post(`http://localhost:3000/comments`, {
+        const newComment = await this.axios.post(`http://localhost:3000/comments`, {
           content: content,
           authorId: this.myId,
           postId: this.id,
           datePublished: date
         });
+
+        this.replies.push(newComment.data);
+        this.comment = '';
 
         this.$forceUpdate();
       } catch(e) {
