@@ -1,5 +1,5 @@
 <template>
-    <div class="p-4 border">
+    <div class="p-4 border m-2">
         <router-link :to="`/post/${id}`" class="text-left hover:text-black-70 underline text-black">{{ content }}</router-link>
         <div class="mt-2 text-right text-cs">Posted on {{ datePublished | moment("calendar") }}
             <AuthorLine :authorId="authorId" :noUserData="noUserData" />
