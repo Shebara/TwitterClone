@@ -1,5 +1,5 @@
 # Twitter Clone
-Tech assignment
+This is a tech assignment. Please have in mind that I couldn't quite figure out everything that TailwindCSS can do, as I'd never worked with it before and that I couldn't get the sass-loader to work with Vue 2.
 
 ## Project setup
 ```
