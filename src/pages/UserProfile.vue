@@ -3,7 +3,7 @@
     <h1>{{ displayName }}</h1>
     <img class="mx-auto max-w-sm" v-show="avatar" :src="avatar" :alt="name" />
     <h5>@{{ name }}</h5>
-    <button class="border bg-slate-300 cursor-pointer hover:bg-slate-100 p-4" @click.prevent="follow">{{ following !== false ? 'Unfollow' : 'Follow' }} @{{ name }}</button>
+    <button v-show="id != myId" class="border bg-slate-300 cursor-pointer hover:bg-slate-100 p-4" @click.prevent="follow">{{ following !== false ? 'Unfollow' : 'Follow' }} @{{ name }}</button>
     <p>Registered on: {{ registrationDate | moment("calendar") }}</p>
     <h2>Posts by @{{ name }}</h2>
     <div class="posts flex flex-wrap justify-center mt-8">
