@@ -8,7 +8,7 @@
     <div :class="error ? 'block' : 'hidden'" class="text-red-900 text-center">{{ error }}</div>
     <div class="users flex flex-wrap flex-col justify-center">
       <div class="p-4 border m-2" v-for="user of users" :key="user.id">
-        <router-link :to="`/user/${user.id}`" class="text-left hover:text-black-70 underline text-black">
+        <router-link :to="`/profile/${user.id}`" class="text-left hover:text-black-70 underline text-black">
           {{ user.displayName }}
           <br>
           <img class="max-w-xs mx-auto" v-show="user.avatar" :src="user.avatar" />
