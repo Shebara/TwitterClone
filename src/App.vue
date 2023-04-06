@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header :key="key" />
-    <router-view class="p-5 container mx-auto" />
+    <router-view :key="$route.path" class="p-5 container mx-auto" />
   </div>
 </template>
 

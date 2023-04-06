@@ -1,7 +1,7 @@
 <template>
     <div>
         <span v-if="! noUserData">by
-            <router-link :to="`/profile/${authorId}`" class="text-left hover:text-black-70 underline text-black">
+            <router-link key="user_profile" :to="`/profile/${authorId}`" class="text-left hover:text-black-70 underline text-black">
             {{ displayName }}
             <span class="italic">(@{{ name }})</span>
             <img v-show="avatar" class="small-avatar ml-auto" :src="avatar" />

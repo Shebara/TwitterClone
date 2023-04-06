@@ -4,12 +4,12 @@
         <div class="menus flex justify-between">
           <ul class="main-menu list-none flex gap-5 justify-left">
             <li v-for="link of links" :key="link.url">
-              <router-link :to="link.url" class="hover:text-indigo-500">{{ link.text }}</router-link>
+              <router-link :to="link.url" :key="link.key" class="hover:text-indigo-500">{{ link.text }}</router-link>
             </li>
           </ul>
           <ul class="auth-menu list-none flex gap-5 justify-right">
             <li v-for="link of authentication" :key="link.url">
-              <router-link :to="link.url" class="hover:text-indigo-500">{{ link.text }}</router-link>
+              <router-link :to="link.url" :key="link.key" class="hover:text-indigo-500">{{ link.text }}</router-link>
             </li>
           </ul>
         </div>
@@ -38,20 +38,24 @@ export default {
         {
           url: '/',
           text: 'Homepage',
+          key: 'home'
         },
         {
           url: '/posts',
           text: 'All Posts',
+          key: 'all'
         },
       ]
       this.authentication = [
         {
           url: '/profile',
-          text: 'My Profile'
+          text: 'My Profile',
+          key: 'my_profile'
         },
         {
           url: '/logout',
-          text: 'Log Out'
+          text: 'Log Out',
+          key: 'logout'
         }
       ]
     } else {
@@ -59,11 +63,13 @@ export default {
       this.authentication = [
         {
           url: '/login',
-          text: 'Log In'
+          text: 'Log In',
+          key: 'login'
         },
         {
           url: '/register',
-          text: 'Register'
+          text: 'Register',
+          key: 'register'
         }
       ]
     }
