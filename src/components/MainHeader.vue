@@ -45,6 +45,11 @@ export default {
           text: 'All Posts',
           key: 'all'
         },
+        {
+          url: '/followed',
+          text: 'Followed Posts',
+          key: 'followed'
+        },
       ]
       this.authentication = [
         {

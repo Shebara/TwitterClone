@@ -2,6 +2,7 @@ import store from './store.js';
 
 import MyPosts from '../pages/MyPosts.vue';
 import AllPosts from '../pages/AllPosts.vue';
+import FollowedPosts from '../pages/FollowedPosts.vue';
 import Post from '../pages/SinglePost.vue';
 import User from '../pages/UserProfile.vue';
 import LogIn from '../pages/LogIn.vue';
@@ -34,6 +35,11 @@ const routes = [
         name: 'User Profile',
         path: '/profile/:id',
         component: User
+    },
+    {
+        name: 'Followed Posts',
+        path: '/followed',
+        component: FollowedPosts
     },
     {
         name: 'Log In',
