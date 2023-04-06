@@ -10,6 +10,8 @@
       <div class="p-4 border m-2" v-for="user of users" :key="user.id">
         <router-link :to="`/user/${user.id}`" class="text-left hover:text-black-70 underline text-black">
           {{ user.displayName }}
+          <br>
+          <img class="max-w-xs" v-show="user-avatar" :src="user.avatar" />
           <span class="italic">(@{{ user.name }})</span>
         </router-link>
       </div>
