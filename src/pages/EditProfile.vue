@@ -5,7 +5,7 @@
       @{{username}}</h4>
     <form class="max-w-md flex flex-col mx-auto" @submit.prevent="submit">
       <input class="mb-2" type="text" v-model="displayName" placeholder="Display Name" />
-      <input class="mb-2" type="password" v-model="oldpassword" placeholder="Old Password*" />
+      <input class="mb-2" type="password" v-model="oldPassword" placeholder="Old Password*" />
       <input class="mb-2" type="password" v-model="password" placeholder="New Password*" />
       <input class="mb-2" type="password" v-model="repeatPassword" placeholder="Repeat Password*" />
       <input class="mb-2" type="text" v-model="avatar" placeholder="Avatar Image URL" />
@@ -23,9 +23,9 @@ export default {
       id: false,
       username: '',
       displayName: '',
-      password: false,
-      oldPassword: false,
-      repeatPassword: false,
+      password: '',
+      oldPassword: '',
+      repeatPassword: '',
       avatar: '',
       error: false,
     }
@@ -72,7 +72,7 @@ export default {
           const profile = await this.axios.get(`http://localhost:3000/users/${this.id}`)
 
           if ( profile.data.password !== oldPassword ) {
-            this.error = 'Wrong old password!'
+            this.error = 'Please input a valid old password.'
 
             return
           }
