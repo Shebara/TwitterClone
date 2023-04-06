@@ -49,39 +49,40 @@ export default {
       try {
         const username = this.username
         const displayName = this.displayName ? this.displayName.length < 1 : username
-        const password = this.password
+        const oldPassword = this.oldPassword
+        const newPassword = this.password && this.password.length > 0 ? this.password : false
         const repeatPassword = this.repeatPassword
 
-        if (password.length < 6) {
+        if (newPassword && newPassword.length < 6) {
           this.error = 'Password must have at least 6 characters.'
 
           return;
         }
-        if (! /^[a-zA-Z0-9]+$/.test(username)) {
-          this.error = 'Username must be alphanumeric.'
-
-          return;
-        }
-        if (password !== repeatPassword) {
-          this.error = 'Passwords don\'t match.'
+        if (newPassword !== repeatPassword) {
+          this.error = 'New passwords don\'t match.'
         }
 
         const avatar = this.avatar.length > 0 ? this.avatar : null
-        const res = await this.axios.get(`http://localhost:3000/users?name=${username}`)
+        const updatedUser = {
+          displayName: displayName,
+          avatar: avatar,
+        }
 
-        if ( res.data.length > 0 ) {
-          this.error = 'User with that username already exists!'
+        if ( newPassword ) {
+          const profile = await this.axios.get(`http://localhost:3000/users/${this.id}`)
 
-          return
+          if ( profile.data.password !== oldPassword ) {
+            this.error = 'Wrong old password!'
+
+            return
+          }
+
+          updatedUser['password'] = newPassword;
         }
 
         this.error = false
 
-        await this.axios.patch(`http://localhost:3000/users/${this.id}`, {
-          password: password,
-          displayName: displayName,
-          avatar: avatar,
-        })
+        await this.axios.patch(`http://localhost:3000/users/${this.id}`, updatedUser)
 
         this.$router.push('/profile')
       } catch(e) {
