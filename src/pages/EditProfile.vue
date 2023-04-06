@@ -31,18 +31,22 @@ export default {
     }
   },
   async created() {
-    this.id = this.$store.getters.getUserId
+    try{
+      this.id = this.$store.getters.getUserId
 
-    if (this.id === false) {
-      return
+      if (this.id === false) {
+        return
+      }
+
+      const profile = await this.axios.get(`http://localhost:3000/users/${this.id}`)
+      const data = profile.data;
+
+      this.username = data.name;
+      this.displayName = data.displayName;
+      this.avatar = data.avatar;
+    } catch(e) {
+      console.error(e);
     }
-
-    const profile = await this.axios.get(`http://localhost:3000/users/${this.id}`)
-    const data = profile.data;
-
-    this.username = data.name;
-    this.displayName = data.displayName;
-    this.avatar = data.avatar;
   },
   methods: {
     async submit() {
