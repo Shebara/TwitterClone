@@ -9,6 +9,7 @@ import LogIn from '../pages/LogIn.vue';
 import Register from '../pages/Register.vue';
 import EditProfile from '../pages/EditProfile.vue';
 import EditPost from '../pages/EditPost.vue';
+import SearchUsers from '../pages/SearchUsers.vue';
 import Error404 from '../pages/404.vue';
 
 const routes = [
@@ -41,6 +42,11 @@ const routes = [
         name: 'Followed Posts',
         path: '/followed',
         component: FollowedPosts
+    },
+    {
+        name: 'Search Users',
+        path: '/search',
+        component: SearchUsers
     },
     {
         name: 'Log In',

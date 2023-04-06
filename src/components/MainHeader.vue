@@ -50,6 +50,11 @@ export default {
           text: 'Followed Posts',
           key: 'followed'
         },
+        {
+          url: '/search',
+          text: 'Search Users',
+          key: 'search'
+        },
       ]
       this.authentication = [
         {

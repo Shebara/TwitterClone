@@ -11,7 +11,7 @@
         <router-link :to="`/user/${user.id}`" class="text-left hover:text-black-70 underline text-black">
           {{ user.displayName }}
           <br>
-          <img class="max-w-xs" v-show="user-avatar" :src="user.avatar" />
+          <img class="max-w-xs mx-auto" v-show="user.avatar" :src="user.avatar" />
           <span class="italic">(@{{ user.name }})</span>
         </router-link>
       </div>
