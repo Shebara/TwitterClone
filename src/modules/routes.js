@@ -7,6 +7,7 @@ import Post from '../pages/SinglePost.vue';
 import User from '../pages/UserProfile.vue';
 import LogIn from '../pages/LogIn.vue';
 import Register from '../pages/Register.vue';
+import EditProfile from '../pages/EditProfile.vue';
 import EditPost from '../pages/EditPost.vue';
 import Error404 from '../pages/404.vue';
 
@@ -50,6 +51,11 @@ const routes = [
         name: 'Register',
         path: '/register',
         component: Register
+    },
+    {
+        name: 'Edit Profile',
+        path: '/editprofile',
+        component: EditProfile
     },
     {
         name: 'New Post',

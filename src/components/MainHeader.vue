@@ -58,6 +58,11 @@ export default {
           key: 'my_profile'
         },
         {
+          url: '/editprofile',
+          text: 'Edit Profile',
+          key: 'edit_profile'
+        },
+        {
           url: '/logout',
           text: 'Log Out',
           key: 'logout'
