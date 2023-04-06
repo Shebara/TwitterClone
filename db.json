@@ -105,6 +105,11 @@
       "followerId": 2,
       "followedId": 0,
       "id": 1
+    },
+    {
+      "followerId": 2,
+      "followedId": 1,
+      "id": 2
     }
   ],
   "alerts": [
