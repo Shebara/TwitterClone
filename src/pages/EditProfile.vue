@@ -9,7 +9,7 @@
       <input class="mb-2" type="password" v-model="password" placeholder="New Password*" />
       <input class="mb-2" type="password" v-model="repeatPassword" placeholder="Repeat Password*" />
       <input class="mb-2" type="text" v-model="avatar" placeholder="Avatar Image URL" />
-      <button class="mb-2" type="submit">Log In</button>
+      <button class="mb-2" type="submit">Update</button>
     </form>
     <div :class="error ? 'block' : 'hidden'" class="text-red-900 text-center">{{ error }}</div>
   </div>
@@ -52,7 +52,7 @@ export default {
     async submit() {
       try {
         const username = this.username
-        const displayName = this.displayName ? this.displayName.length < 1 : username
+        const displayName = this.displayName.length < 1 ? username : this.displayName
         const oldPassword = this.oldPassword
         const newPassword = this.password && this.password.length > 0 ? this.password : false
         const repeatPassword = this.repeatPassword
